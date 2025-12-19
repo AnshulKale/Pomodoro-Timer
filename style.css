@@ -1,0 +1,423 @@
+:root {
+    --bg: #fff;
+    --text: rgb(44, 47, 52);
+
+    --container-bg: rgb(239, 239, 239);
+    --lightgray: lightgray;
+
+    --h2-boxShadow1: lightgray;
+    --h2-boxShadow2: black;
+    --timerBtn-boxShadow: rgb(190, 190, 190);
+    --timerBtn-textColor: white;
+
+    --btn-start: rgb(68, 137, 68);
+    --btn-start-hover: rgb(140, 219, 140);
+
+    --btn-stop: rgb(161, 65, 75);
+    --btn-stop-hover: rgb(181, 104, 112);
+
+    --btn-reset: rgb(84, 84, 84);
+    --btn-reset-hover: rgb(152, 152, 152);
+
+    --theme-bg: rgb(238, 238, 238);
+    --theme-boxShadow: rgb(176, 176, 176);
+    --slider-bg: black;
+
+    --menu-button-bg: rgb(255, 255, 255);
+    --menu-button-color: #575757;
+    --menu-button-hover: rgb(234, 234, 234);
+
+    --blur: 4px;
+
+}
+
+body.dark {
+    --bg: #111112;
+    --text: rgb(255, 255, 255);
+
+    --container-bg: rgb(74, 74, 74);
+    --lightgray: rgb(130, 130, 130);
+
+    --h2-boxShadow1: rgb(28, 28, 28);
+    --h2-boxShadow2: rgb(153, 153, 153);
+    --timerBtn-boxShadow: rgb(19, 19, 19);
+    --timerBtn-textColor: white;
+
+    --btn-start: rgb(68, 137, 68);
+    --btn-start-hover: rgb(140, 219, 140);
+
+    --btn-stop: rgb(161, 65, 75);
+    --btn-stop-hover: rgb(181, 104, 112);
+
+    --btn-reset: rgb(84, 84, 84);
+    --btn-reset-hover: rgb(152, 152, 152);
+
+    --theme-bg: rgb(238, 238, 238);
+    --theme-boxShadow: rgb(176, 176, 176);
+    --slider-bg: black;
+
+    --menu-button-bg: rgb(74, 74, 74);
+    --menu-button-color: #e4e4e4;
+    --menu-button-hover: rgb(152, 152, 152);
+
+    --blur: 0px;
+
+}
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    will-change: background-color, color;
+}
+
+.page {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #2052bf;
+    box-shadow: 0 1px var(--blur) 2px lightgray;
+    border-radius: 0 0 5px 5px;
+    width: 100%;
+    height: 70px;
+    z-index: 999;
+}
+
+#navbar-container>img {
+    width: 70px;
+    height: 70px;
+}
+
+.navbar-links>a {
+    text-decoration: none;
+    color: white;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.navbar-links>a:hover {
+    color: rgb(196, 219, 255);
+}
+
+.hamburger {
+    display: none;
+}
+
+.sidebar {
+    display: none;
+}
+
+.card-wrap {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--container-bg);
+    box-shadow: 0 0 var(--blur) 1px var(--lightgray);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    box-shadow: 2px 2px 0px 2px var(--h2-boxShadow1), -2px -2px 0px 2px var(--h2-boxShadow2);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#timer {
+    font-size: 100px;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.timerButton {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0px 1px var(--timerBtn-boxShadow);
+    transition-property: background-color, box-shadow;
+    transition-duration: 0.4s, 0.1s;
+    color: var(--timerBtn-textColor);
+
+    transition: background-color 0.4s ease, color 0.4s ease;
+    will-change: background-color, color;
+}
+
+#start {
+    background-color: var(--btn-start);
+}
+
+#start:hover {
+    background-color: var(--btn-start-hover);
+}
+
+#stop {
+    background-color: var(--btn-stop);
+}
+
+#stop:hover {
+    background-color: var(--btn-stop-hover);
+}
+
+#reset {
+    background-color: var(--btn-reset);
+}
+
+#reset:hover {
+    background-color: var(--btn-reset-hover);
+}
+
+
+
+#start:active,
+#stop:active,
+#reset:active {
+    box-shadow: 0 0 0 0 lightblue;
+}
+
+#toggleTheme {
+    margin: 5px;
+    width: 50px;
+    height: 25px;
+    background-color: var(--theme-bg);
+    border-radius: 25px;
+    box-shadow: 1px 1px 0 1px var(--theme-boxShadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+#checkbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+}
+
+#circle {
+    width: 20px;
+    height: 20px;
+    background-color: var(--slider-bg);
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    transition: transform 0.4s ease;
+}
+
+#checkbox:checked+#circle {
+    transform: translateX(25px);
+}
+
+.menu {
+    width: 100%;
+    position: relative;
+}
+
+.menu>button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    background-color: var(--menu-button-bg);
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 var(--blur) 1px var(--lightgray);
+    width: 100%;
+    color: var(--menu-button-color);
+}
+
+.menu>button:hover {
+    background-color: var(--menu-button-hover);
+}
+
+.menu.open .dropdown-list {
+    display: block;
+}
+
+.menu.open .arrow {
+    transform: rotateZ(90deg);
+}
+
+.arrow {
+    width: 10px;
+    height: 10px;
+    transition: transform 0.25s ease;
+}
+
+.icons {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+
+}
+
+.dropdown-list {
+    list-style: none;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 var(--blur) 1px var(--lightgray);
+    background-color: var(--menu-button-bg);
+
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dropdown-item {
+    background-color: var(--menu-button-bg);
+    margin-bottom: 5px;
+    padding: 10px 0px;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.15s ease-in;
+
+}
+
+.dropdown-item:hover {
+    background-color: rgb(211, 211, 211);
+}
+
+.dropdown-anchor {
+    text-decoration: none;
+    color: var(--menu-button-color);
+    padding-left: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: small;
+    transition: transform 0.2s;
+}
+
+.dropdown-anchor:hover {
+    transform: translateX(10px);
+    color: #2d2d2d;
+}
+
+#socialToggle {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    align-items: center;
+    gap: 12px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        line-height: 1;
+        border: 0;
+        border-radius: 5px;
+        background: none;
+        padding: 0;
+    }
+
+    .hamburger:hover {
+        color: rgb(196, 219, 255);
+        cursor: pointer;
+    }
+
+    .sidebar {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 250px;
+        max-width: 250px;
+        max-height: 100vh;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 1px 0 var(--blur) lightgray;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 998;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-links {
+        list-style: none;
+        display: flex;
+        padding: 0 10px;
+
+        flex-direction: column;
+
+    }
+
+    .sidebar-links-items>a {
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        transition: transform 0.2s;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .sidebar-links-items {
+        padding: 10px 5px;
+        margin-bottom: 4px;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .sidebar-links-items:hover {
+        background-color: rgb(203, 230, 255);
+    }
+
+    .sidebar-links-items:hover > a {
+        transform: translate(20px);
+    }
+}

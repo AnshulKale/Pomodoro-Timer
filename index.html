@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar-container">
+        <img src="public/WebsiteLogo.png">
+        <div class="navbar-links">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+
+        <button class="hamburger" aria-label="Open menu">
+            ☰
+        </button>
+    </div>
+    <div class="sidebar">
+        <ul class="sidebar-links">
+            <li class="sidebar-links-items"><a href="#home">HOME</a></li>
+            <li class="sidebar-links-items"><a href="#about">ABOUT</a></li>
+            <li class="sidebar-links-items"><a href="#contact">CONTACT</a></li>
+        </ul>   
+    </div>
+
+    <main class="page">
+        <div class="card-wrap">
+            <div id="container">
+                <h2>Pomodoro Timer</h1>
+                <h1 id="timer">25:00</h1>
+                <div class="btnContainer">
+                    <button id="start" class="timerButton">START</button>
+                    <button id="stop" class="timerButton">STOP</button>
+                    <button id="reset" class="timerButton">RESET</button>
+                </div>
+            </div>
+
+            <div id="socialToggle">
+                <div class="menu">
+                    <button>Social Media <img src="public/right-arrow.png" id="arrow-icon" class="arrow"></button>
+                    <ul class="dropdown-list">
+                        <li class="dropdown-item">
+                            <a href="https://www.youtube.com" class="dropdown-anchor"><img src="public/youtube.png" class="icons">Youtube</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="https://instagram.com" class="dropdown-anchor"><img src="public/instagram.png" class="icons">Instagram</a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="https://x.com" class="dropdown-anchor"><img src="public/twitter.png" class="icons">X (Formerly Twitter)</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div id="toggleTheme">
+                    <input type="checkbox" id="checkbox">
+                    <div id="circle"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <script src="index.js"></script>
+</body>
+</html>
